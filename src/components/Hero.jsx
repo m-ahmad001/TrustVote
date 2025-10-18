@@ -2,10 +2,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="py-24 md:py-40">
+    <section className="">
       <div className="container mx-auto px-4">
         <div
-          className="flex min-h-[480px] flex-col gap-10 items-center justify-center text-center p-4"
+          className="flex h-screen flex-col gap-10 items-center justify-center text-center p-4"
           style={{
             background:
               "radial-gradient(circle, rgba(94, 199, 104, 0.15) 0%, rgba(16, 20, 17, 0) 60%)",
