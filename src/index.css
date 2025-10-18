@@ -1,0 +1,30 @@
+@import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=swap"); */
+/* Define your design tokens */
+@theme {
+  /* Colors */
+  --color-primary: #5ec768;
+  --color-secondary: #e3be77;
+  --color-dark: #101411;
+  --color-surface: #132a15;
+
+  /* Font families */
+  --font-display: "Space Grotesk", "sans-serif";
+
+  /* Border radii — you can define custom variables if needed */
+  /* For example */
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+@layer utilities {
+  .glow-effect {
+    box-shadow: 0 0 15px 0px rgba(94, 199, 104, 0.4);
+  }
+  .glow-effect-secondary {
+    box-shadow: 0 0 15px 0px rgba(227, 190, 119, 0.3);
+  }
+}
