@@ -20,7 +20,7 @@ const Header = () => {
           </svg>
         </div>
         <h2 className="text-white text-2xl font-bold leading-tight tracking-[-0.015em]">
-          DeVo
+          TrustVote
         </h2>
       </div>
 

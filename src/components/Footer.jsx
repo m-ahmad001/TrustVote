@@ -20,7 +20,7 @@ const Footer = () => {
               </svg>
             </div>
             <p className="text-white/60 text-sm">
-              © 2024 DeVo. All rights reserved.
+              © 2025 TrustVote. All rights reserved.
             </p>
           </div>
           <div className="flex items-center gap-8">

@@ -1,4 +1,4 @@
-# DeVo - Decentralized Voting Platform
+# TrustVite - Decentralized Voting Platform
 
 A modern, secure, and transparent blockchain-based voting application built with React and Vite.
 
@@ -79,7 +79,6 @@ The main stylesheet where Tailwind CSS is imported and custom utilities are defi
   --color-primary: #5ec768;
   --color-secondary: #e3be77;
   --color-dark: #101411;
-  --color-surface: #132a15;
 
   /* Font families */
   --font-display: "Space Grotesk", "sans-serif";
@@ -177,22 +176,6 @@ html {
 </div>
 ```
 
-### Define Colors in `tailwind.config.js`
-
-All custom colors are centrally defined in the theme configuration:
-
-```javascript
-colors: {
-  primary: "#5ec768",                          // Bright green
-  secondary: "#e3be77",                        // Soft gold
-  dark: "#101411",                             // Dark background
-  surface: "#132a15",                          // Surface tone
-  "background-dark": "#101411",                // Dark background
-  "background-dark-secondary": "#000000",      // Pure black
-  "background-light": "#f6f8f6",               // Light background
-}
-```
-
 **Usage in classes:**
 
 - `bg-primary` → Green background
@@ -250,40 +233,10 @@ npm run lint
 
 ---
 
-## 🎯 Dark Mode Setup
-
-The project uses **class-based dark mode** via Tailwind CSS.
-
-**HTML (`index.html`):**
-
-```html
-<html lang="en" class="dark">
-  <body class="bg-dark font-display text-white">
-    <div id="root"></div>
-  </body>
-</html>
-```
-
-**Toggle dark mode dynamically (optional):**
-
-```javascript
-// Add dark class to <html>
-document.documentElement.classList.add("dark");
-
-// Remove dark class
-document.documentElement.classList.remove("dark");
-
-// Toggle dark class
-document.documentElement.classList.toggle("dark");
-```
-
----
-
 ## 📚 Useful Resources
 
 - [Tailwind CSS v4 Docs](https://tailwindcss.com/)
 - [Tailwind CSS with Vite](https://tailwindcss.com/docs/installation/using-vite)
-- [Vite Official Docs](https://vitejs.dev/)
 - [React Official Docs](https://react.dev/)
 
 ---
@@ -308,6 +261,9 @@ This project is part of the FYP (Final Year Project).
 ## 👤 Contributors
 
 - Development Team
+- Kashaf
+- x
+- y
 
 ---
 

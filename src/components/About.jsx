@@ -9,10 +9,10 @@ const About = () => {
           // style={{ background: "linear-gradient(145deg, #000000, #101411)" }}
         >
           <h2 className="text-center text-4xl font-bold leading-tight tracking-[-0.015em] mb-6">
-            About DeVo
+            About TrustVote
           </h2>
           <p className="text-white/70 text-center text-lg font-normal leading-relaxed max-w-4xl mx-auto">
-            DeVo is committed to revolutionizing the electoral process. By
+            TrustVote is committed to revolutionizing the electoral process. By
             harnessing the power of blockchain technology, we offer a voting
             platform that is inherently secure, transparent, and resistant to
             tampering. Our system allows for the seamless management of multiple
