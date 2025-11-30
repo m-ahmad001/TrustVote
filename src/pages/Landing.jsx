@@ -11,9 +11,9 @@ export default function Landing() {
         {/* Hero Section */}
         <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 z-0">
-            <img 
-              className="h-full w-full object-cover opacity-10" 
-              alt="Abstract blockchain network illustration with interconnected nodes and glowing lines on a dark blue background." 
+            <img
+              className="h-full w-full object-cover opacity-10"
+              alt="Abstract blockchain network illustration with interconnected nodes and glowing lines on a dark blue background."
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcpcg4IRuWddlhqz02f_NQol9TjzjPLPNVomuhFigmuwHKM8VX-BszKfWc8IBb_MqmQLyuwSa9O-RDv8zK3r9_VdmUr_nkQjpyU8JBtTKXR7d2BXmkaYL1aCoH36pS3wuY36TRgT9XPwUP7KWFn2MFKlrfOue-2eHDWNUZHBhp_XNaFJXHJFbo86u7eRkFismU0M9ckAwpBIY3_Gs8xfrFcSDpwSv60AIs7ErDCmjNJeECBq9JUuOaTQ6pK5I6nCkbw23CVaYLsXA"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
@@ -42,6 +42,8 @@ export default function Landing() {
               </button>
             </div>
           </div>
+
+       
         </section>
 
         {/* About Section */}
@@ -160,7 +162,7 @@ export default function Landing() {
           </div>
         </section>
       </main>
-      
+
       {/* Footer */}
       <Footer />
     </div>
