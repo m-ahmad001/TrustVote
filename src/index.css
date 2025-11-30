@@ -26,6 +26,7 @@
   /* Supporting: #799eb2 */
   --color-muted: oklch(0.702 0.053 239.61);
   --color-muted-foreground: oklch(0.556 0 0);
+  --color-supporting-1: oklch(0.702 0.053 239.61);
 
   /* Supporting-light: #b1d4e5 */
   --color-supporting-light: oklch(0.841 0.053 238.65);
@@ -68,4 +69,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
