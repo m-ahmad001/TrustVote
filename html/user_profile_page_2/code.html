@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>User Profile - Decentralized Voting</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#123964",
+              "background-light": "#f6f7f8",
+              "background-dark": "#121920",
+              "secondary": "#2754ba",
+              "accent": "#00aee6",
+              "supporting-text": "#799eb2",
+              "supporting-border": "#b1d4e5",
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-6 md:px-10 py-3 sticky top-0 z-10">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M12.0799 24L4 19.2479L9.95537 8.75216L18.04 13.4961L18.0446 4H29.9554L29.96 13.4961L38.0446 8.75216L44 19.2479L35.92 24L44 28.7521L38.0446 39.2479L29.96 34.5039L29.9554 44H18.0446L18.04 34.5039L9.95537 39.2479L4 28.7521L12.0799 24Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-primary dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Decentralized Voting</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal" href="#">Dashboard</a>
+<a class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal" href="#">Elections</a>
+<a class="text-primary dark:text-accent font-semibold text-sm leading-normal" href="#">Profile</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJBgXzbeDYvmZC4OxFYr_KM2RykX7Mg6nlZCuIBik4RcmpXd2m8GVvse1BCXvpWjyZ0LJFVe567NRx3Prf8an23RHv5PL26IMi23GbO-YPF4OkW-0AgqxRHflFBEzFagwwwWZMXzb3_76H52RGm_YuBqxriHdssbjXjDFAyOZCw4rRD4gdWCUZUEmTveODW1TvIqw1hP1VUDkYkqJGBPfWfqTG4G314ssBtVi0sKeN8zqiJDbnd9k6mHRsJoHUd6abjpqkemJe3KY");'></div>
+</div>
+</header>
+<main class="w-full max-w-7xl mx-auto p-4 md:p-8">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- SideNavBar -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="flex h-full min-h-[auto] flex-col justify-start bg-white dark:bg-slate-900/40 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User profile avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsb5U-n2vafUt1c4uoG4b9-RC2jSbNU5gAwTJhwOH9ydMtJysel05FUx2Q1mL6zU6iwBrdEll75ocgAcZHy9qm-XSxWo-JT3mfcP6hZ9Q7JnKi18Ru4eiiI6WYKL8dj3AoXvAXzGyBPZmQoIPZ30TjM3HCZGrU4byhfBY0p9CviEyAsXgb7WFwgn-NWTqnL_9b46vGsyeBvcClv3mpSeDaoOjfBIgQfcWG4EaXI_t7en7_e7pDAVVHAMeJDg7M9zrZTHkFmjc6MUI");'></div>
+<div class="flex flex-col">
+<h1 class="text-slate-900 dark:text-white text-base font-semibold leading-normal">Alex Doe</h1>
+<p class="text-supporting-text text-sm font-normal leading-normal">Voter</p>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined text-primary dark:text-accent" style="font-variation-settings: 'FILL' 1, 'wght' 400;">person</span>
+<p class="text-primary dark:text-accent text-sm font-medium leading-normal">Personal Information</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">lock</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Security</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">settings</span>
+<p class="text-slate-700 dark:text-slate-300 text-sm font-medium leading-normal">Account Settings</p>
+</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 bg-white dark:bg-slate-900/40 p-6 md:p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3 pb-6 border-b border-slate-200 dark:border-slate-800">
+<p class="text-slate-900 dark:text-white text-3xl font-bold leading-tight tracking-tight">Personal Information</p>
+</div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<!-- TextField: Full Name -->
+<div class="flex flex-col">
+<label class="flex flex-col">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Full Name</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-3 text-sm font-normal leading-normal" value="Alex Doe"/>
+</div>
+</label>
+</div>
+<!-- TextField: Email -->
+<div class="flex flex-col">
+<label class="flex flex-col">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Email Address</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-slate-900 dark:text-white focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 h-12 placeholder:text-slate-400 dark:placeholder:text-slate-500 p-3 text-sm font-normal leading-normal" value="alex.doe@university.edu"/>
+</div>
+</label>
+</div>
+<!-- CNIC Field -->
+<div class="flex flex-col">
+<label class="flex flex-col">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">CNIC</p>
+<div class="flex w-full flex-1 items-center rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 h-12 px-3">
+<span class="text-slate-500 dark:text-slate-400 text-sm">42101-*******-9</span>
+</div>
+</label>
+</div>
+<!-- Role Badge -->
+<div class="flex flex-col">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">User Role</p>
+<div class="flex items-center h-12">
+<span class="px-3 py-1 bg-accent/20 text-accent-600 dark:text-accent text-xs font-semibold rounded-full">Voter</span>
+</div>
+</div>
+<!-- Wallet Address Field -->
+<div class="flex flex-col col-span-1 md:col-span-2">
+<p class="text-slate-800 dark:text-slate-200 text-sm font-medium leading-normal pb-2">Linked Wallet Address</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 h-12">
+<p class="flex-1 truncate text-slate-500 dark:text-slate-400 p-3 text-sm font-mono">0x1234...56789ABCDEF</p>
+<button class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-accent flex items-center justify-center px-3 border-l border-slate-300 dark:border-slate-700">
+<span class="material-symbols-outlined text-base">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-end gap-3 mt-8 pt-6 border-t border-slate-200 dark:border-slate-800">
+<button class="px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-600">Cancel</button>
+<button class="px-4 py-2 text-sm font-semibold text-white bg-primary rounded-lg hover:bg-opacity-90">Save Changes</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

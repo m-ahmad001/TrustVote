@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OTP Verification</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#123962",
+              "secondary": "#2754ba",
+              "accent": "#00aee6",
+              "supporting-1": "#799eb2",
+              "supporting-2": "#b1d4e5",
+              "background-light": "#f8f9fa",
+              "background-dark": "#16191c",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center group/design-root overflow-x-hidden p-4">
+<div class="absolute top-0 left-0 w-full px-4 sm:px-8 md:px-10 lg:px-20">
+<header class="flex items-center justify-between whitespace-nowrap py-6">
+<div class="flex items-center gap-3 text-primary dark:text-white">
+<div class="size-6">
+<svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_6_319)">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"></path>
+</g>
+<defs>
+<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
+</defs>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">De-Vote</h2>
+</div>
+</header>
+</div>
+<main class="w-full max-w-md">
+<div class="bg-white dark:bg-background-dark/80 backdrop-blur-sm shadow-xl rounded-xl p-8 space-y-8 border border-gray-200 dark:border-gray-700">
+<div class="text-center space-y-2">
+<h1 class="text-primary dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">Verify Your Identity</h1>
+<p class="text-supporting-1 dark:text-gray-400 text-base font-normal leading-normal">We've sent a 6-digit verification code to your registered email address.</p>
+</div>
+<div class="flex flex-col items-center space-y-6">
+<fieldset class="relative flex gap-2 sm:gap-4">
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+<input class="flex h-14 w-12 text-center text-lg font-bold [appearance:textfield] focus:outline-none focus:ring-2 focus:ring-secondary dark:focus:ring-accent bg-background-light dark:bg-gray-800 border border-supporting-2 dark:border-gray-600 rounded-lg text-gray-800 dark:text-white transition-all [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none" max="9" maxlength="1" min="0" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;((this.previousSibling.value=''),this.previousSibling.focus()))||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" onkeyup="javascript:event.key.match(/^\d$/)&amp;&amp;((this.value.length&gt;1&amp;&amp;((this.nextSibling&amp;&amp;(this.nextSibling.value=this.value.slice(1))),(this.value=this.value[0]))),(this.nextSibling&amp;&amp;this.nextSibling.focus()));" type="number" value=""/>
+</fieldset>
+</div>
+<div class="w-full">
+<button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 dark:focus:ring-offset-background-dark/80">
+<span class="truncate">Verify</span>
+</button>
+</div>
+<div class="text-center space-y-4">
+<div class="text-sm text-supporting-1 dark:text-gray-400">
+                        Code expires in <span class="font-bold text-accent">01:59</span>
+</div>
+<div class="text-sm text-supporting-1 dark:text-gray-400">
+                        Didn't receive a code? <a class="font-bold text-primary dark:text-accent hover:underline" href="#">Resend</a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

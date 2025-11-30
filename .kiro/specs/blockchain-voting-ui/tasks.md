@@ -1,306 +1,310 @@
-# Implementation Plan
+# Implementation Plan - UI First Approach
 
-## Project Setup and Configuration
+## Overview
+
+This implementation plan focuses on building the UI first without backend or blockchain integration. The approach:
+
+1. **No Backend Calls**: All data will be managed through React Context API with mock data
+2. **No Blockchain Code**: Wallet connections and transactions will be simulated
+3. **No Prop Drilling**: All state management through Context API (AuthContext, CampaignContext, WalletContext)
+4. **HTML to React Conversion**: Systematically convert existing HTML/Tailwind pages from the `html/` folder
+5. **Design First, Implementation Later**: Build complete UI with mock data, prepare for future backend integration
+
+## Architecture
+
+- **Context API Structure**:
+  - `AuthContext`: User authentication state, profile data
+  - `CampaignContext`: Campaign data, voting records, results
+  - `WalletContext`: Wallet connection state, address
+  - `LanguageContext`: Internationalization (optional)
+
+- **Folder Structure**:
+  - `src/pages/`: Page components converted from HTML
+  - `src/context/`: Context providers and hooks
+  - `src/utils/`: Validation and helper functions
+  - `src/components/`: Reusable UI components (extracted from pages)
+
+- **No Components Nesting**: Keep components flat, use context for data sharing instead of prop drilling
+
+## Phase 1: Project Setup and Context Architecture
 
 - [ ] 1. Initialize React project with Vite and configure Tailwind CSS
-  - Create new Vite React project with TypeScript support
-  - Install and configure Tailwind CSS with custom color palette (Primary: #123962, Secondary: #2754ba, Accent: #00aee6, Supporting: #799eb2, #b1d4e5)
-  - Install shadcn/ui CLI and initialize components
-  - Set up folder structure: components/, pages/, utils/
-  - Configure environment variables for contract address and API URL
+  - Set up Vite React project (already exists, verify configuration)
+  - Configure Tailwind CSS with custom color palette (Primary: #123962, Secondary: #2754ba, Accent: #00aee6, Supporting: #799eb2, #b1d4e5)
+  - Set up folder structure: pages/, context/, utils/
+  - Add Google Material Symbols font for icons
   - _Requirements: 11.1, 11.2, 11.3, 11.4_
 
 - [ ] 2. Install dependencies and configure routing
   - Install React Router v6 for navigation
-  - Install ethers.js v6 for blockchain integration
-  - Install axios for API calls
-  - Install lucide-react for icons
   - Set up React Router with routes for all pages (Landing, Register, OTPVerify, Voting, Results, CampaignManagement, AddMember, CampaignDetails, UserProfile)
+  - Create basic route structure without page implementations
   - _Requirements: 1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1_
 
-## Core Utilities and Blockchain Integration
+- [ ] 3. Set up React Context API architecture
+  - Create AppContext for global state management (user, wallet, campaigns, language)
+  - Create AuthContext for authentication state (mock data for now)
+  - Create CampaignContext for campaign data (mock data for now)
+  - Create WalletContext for wallet connection state (mock data for now)
+  - Set up context providers in App.jsx
+  - No prop drilling - all state accessed via context hooks
+  - _Requirements: 14.1, 2.1, 4.1, 6.1_
 
-- [ ] 3. Create blockchain utility functions with ethers.js
-  - [ ] 3.1 Implement wallet connection functions
-    - Write `getProvider()` function using ethers.BrowserProvider
-    - Write `getSigner()` function to get wallet signer
-    - Write `connectWallet()` function to request MetaMask connection
-    - Implement event listeners for account and chain changes
-    - _Requirements: 14.1, 14.2, 14.3, 14.4_
-  
-  - [ ] 3.2 Implement smart contract interaction functions
-    - Write `getContract()` function to create contract instance
-    - Write `castVote()` function to submit votes to blockchain
-    - Write `hasVoted()` function to check voting status
-    - Write `getResults()` function to fetch campaign results
-    - _Requirements: 4.4, 4.5, 5.5, 13.1, 13.2, 13.3_
+## Phase 2: Shared Components (Convert from HTML)
 
-- [ ] 4. Create API utility for backend communication
-  - Write axios instance with base URL configuration
-  - Implement API functions for authentication (register, sendOTP, verifyOTP, login, getProfile)
-  - Implement API functions for campaigns (getCampaigns, getCampaignById, createCampaign, updateCampaign, deleteCampaign, getResults)
-  - Implement API functions for voting (submitVote, checkVoted, getReceipt)
-  - Implement API functions for members (addMember, bulkAddMembers, getMembers, removeMember)
-  - Add JWT token interceptor for authenticated requests
-  - _Requirements: 2.4, 3.4, 4.4, 6.2, 7.3_
+- [ ] 4. Create Navbar component from HTML
+  - Convert html/decentralized_voting_landing_page navbar section to React
+  - Use Material Symbols icons instead of SVG
+  - Add responsive hamburger menu for mobile
+  - Connect to AuthContext for user state
+  - Connect to WalletContext for wallet display (mock for now)
+  - No backend calls - pure UI component
+  - _Requirements: 1.6, 10.2, 11.1_
 
-- [ ] 5. Create form validation utility
+- [ ] 5. Create Footer component from HTML
+  - Convert html/decentralized_voting_landing_page footer section to React
+  - Keep all styling from original HTML
+  - Make links functional with React Router
+  - Pure presentational component
+  - _Requirements: 1.6_
+
+- [ ] 6. Create utility functions for UI
   - Write email validation function using regex pattern
   - Write CNIC validation function (13 digits)
   - Write wallet address validation function (42-char hex starting with 0x)
-  - Write general input validation helpers
+  - Write address truncation helper (0x1234...5678)
+  - Write date formatting helpers
+  - No API calls - pure utility functions
   - _Requirements: 12.4, 12.5, 12.6_
 
-## Reusable UI Components
+## Phase 3: Landing Page (Convert from HTML)
 
-- [ ] 6. Build Navbar component
-  - Create responsive navigation bar with logo "BlockVote"
-  - Add navigation links (Home, Dashboard, Campaigns, Results)
-  - Integrate WalletConnect component for wallet status display
-  - Add user profile dropdown menu
-  - Implement hamburger menu for mobile viewport
-  - Style with Primary color for text and border-bottom with supporting-light
-  - _Requirements: 1.6, 10.2, 11.1_
+- [ ] 7. Convert Landing Page Hero Section
+  - Convert html/decentralized_voting_landing_page hero section to React
+  - Keep all Tailwind classes from original HTML
+  - Make buttons functional with React Router navigation
+  - Use Material Symbols for icons
+  - Pure UI component - no backend calls
+  - _Requirements: 1.1, 1.2_
 
-- [ ] 7. Build WalletConnect component
-  - Create "Connect Wallet" button with Accent color
-  - Display connected wallet address in truncated format (0x1234...5678)
-  - Show connection status indicator (green dot when connected)
-  - Handle MetaMask not installed error with installation link
-  - Implement disconnect wallet functionality
-  - Add loading state during connection
-  - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6_
+- [ ] 8. Convert Landing Page About Section
+  - Convert html/decentralized_voting_landing_page about section to React
+  - Maintain exact styling from HTML
+  - Pure presentational component
+  - _Requirements: 1.3_
 
-- [ ] 8. Build FeatureCard component
-  - Create card layout with icon, title, and description props
-  - Add left border accent (4px width) with dynamic color
-  - Implement hover effect with shadow and border color change
-  - Style with white background and rounded corners
-  - _Requirements: 1.5, 11.7_
+- [ ] 9. Convert Landing Page How It Works Section
+  - Convert html/decentralized_voting_landing_page how-it-works section to React
+  - Keep 3-step process with Material Symbols icons
+  - Maintain grid layout and styling
+  - _Requirements: 1.4_
 
-- [ ] 9. Build CampaignCard component
-  - Display campaign title, description (2 lines max with ellipsis), status badge, end date, and total votes
+- [ ] 10. Convert Landing Page Features Section
+  - Convert html/decentralized_voting_landing_page features section to React
+  - Keep 4-feature grid layout
+  - Use Material Symbols for icons
+  - Maintain card styling and hover effects
+  - _Requirements: 1.5, 10.6_
+
+- [ ] 11. Assemble complete Landing Page
+  - Integrate Navbar, Hero, About, HowItWorks, Features, and Footer
+  - Ensure responsive layout matches original HTML
+  - Test all navigation links
+  - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 10.1_
+
+## Phase 4: Authentication Pages (Convert from HTML)
+
+- [ ] 12. Convert User Registration Page
+  - Convert html/user_registration_page to React component
+  - Create form with controlled inputs (Wallet Address, Email, Full Name, CNIC)
+  - Add inline validation using utility functions
+  - Connect to AuthContext for state management
+  - Mock registration - store in context, no API calls
+  - Navigate to OTP page on submit
+  - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
+
+- [ ] 13. Convert OTP Verification Page
+  - Convert html/otp_verification_page to React component
+  - Create 6-digit OTP input field
+  - Add countdown timer (5 minutes) with useState
+  - Mock OTP verification - accept any 6-digit code
+  - Update AuthContext on successful verification
+  - Navigate to voting page on success
+  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
+
+## Phase 5: Voting Interface Pages (Convert from HTML)
+
+- [ ] 14. Convert Voting Interface Page
+  - Convert html/voting_interface_page to React component
+  - Display list of mock campaigns from CampaignContext
+  - Create CampaignCard component for each campaign
+  - Show wallet verification status from WalletContext
+  - Add "Vote Now" button navigation to campaign details
+  - Handle empty state when no campaigns exist
+  - _Requirements: 4.1, 4.2, 4.3, 10.6_
+
+- [ ] 15. Convert Campaign Details Page (Voter View)
+  - Convert html/campaign_details_page_(voter_view)_ to React component
+  - Display campaign information from CampaignContext
+  - Create VoteOption component for candidate selection
+  - Show voting interface with radio buttons
+  - Mock vote submission - update CampaignContext
+  - Show "Already Voted" status if user voted (from context)
+  - Display "Voting Closed" for closed campaigns
+  - Add loading states for better UX
+  - _Requirements: 4.4, 4.5, 4.6, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6_
+
+## Phase 6: Results Dashboard (Convert from HTML)
+
+- [ ] 16. Convert Real-time Results Dashboard
+  - Convert html/real-time_results_dashboard to React component
+  - Display campaign selector dropdown
+  - Create ResultsChart component for vote distribution
+  - Show campaign statistics from CampaignContext
+  - Add "Results updating live" indicator
+  - Mock auto-refresh with useEffect timer
+  - Display last updated timestamp
+  - Pure UI - no blockchain calls
+  - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6_
+
+## Phase 7: Campaign Management Pages (Convert from HTML)
+
+- [ ] 17. Convert Campaign Management Page
+  - Convert html/campaign_management_page to React component
+  - Display "Create New Campaign" button at top
+  - Show list of campaigns from CampaignContext
+  - Add "Edit" and "Delete" buttons for each campaign
+  - Display campaign statistics (mock data)
+  - Create modal/form for campaign creation
+  - Mock campaign CRUD - update CampaignContext only
+  - Add delete confirmation dialog
+  - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7_
+
+- [ ] 18. Convert Create Campaign Page (Admin View)
+  - Convert html/create_campaign_page_(admin_view)_ to React component
+  - Create form with campaign details (name, description, options, duration)
+  - Add dynamic option fields (add/remove candidates)
+  - Implement form validation
+  - Mock campaign creation - add to CampaignContext
+  - Navigate back to campaign management on success
+  - _Requirements: 6.1, 6.2, 6.3, 6.4_
+
+- [ ] 19. Create Add Member Page (design from scratch or use simple form)
+  - Create form with email and wallet address inputs
+  - Add "Bulk Upload" button for CSV file upload
+  - Implement CSV parsing (use Papa Parse or similar)
+  - Display member list table
+  - Mock member management - store in context
+  - Add remove member functionality
+  - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6_
+
+## Phase 8: User Profile Page (Convert from HTML)
+
+- [ ] 20. Convert User Profile Page
+  - Convert html/user_profile_page_2 to React component
+  - Display user information from AuthContext
+  - Add "Edit Profile" button to toggle edit mode
+  - Implement editable fields for name and email
+  - Show wallet connection status from WalletContext
+  - Mock wallet change functionality
+  - Add language preference toggle (English/Urdu)
+  - Update AuthContext on profile changes
+  - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6_
+
+## Phase 9: Reusable UI Components
+
+- [ ] 21. Create CampaignCard component
+  - Extract card design from converted pages
+  - Display campaign title, description, status badge, end date, total votes
   - Add status badge with color coding (Active: Accent, Closed: Supporting)
   - Include "View Details" or "Vote Now" button based on status
   - Implement hover effect with shadow
   - _Requirements: 4.1, 6.3, 10.6_
 
-- [ ] 10. Build VoteOption component
-  - Create radio button with custom styling
-  - Display option name (bold) and optional description
+- [ ] 22. Create VoteOption component
+  - Extract from Campaign Details page
+  - Create custom radio button styling
+  - Display option name and description
   - Highlight selected state with Accent border
-  - Implement disabled state for already voted options
+  - Implement disabled state for voted options
   - _Requirements: 4.1, 4.5_
 
-- [ ] 11. Build ResultsChart component
+- [ ] 23. Create ResultsChart component
+  - Extract from Results Dashboard
   - Display horizontal bar charts for vote distribution
-  - Show option name, percentage bar, vote count, and percentage text
-  - Use alternating colors (Accent, Secondary, Primary) for bars
-  - Add smooth CSS transition for bar fill animation
+  - Show option name, percentage bar, vote count, percentage text
+  - Use alternating colors (Accent, Secondary, Primary)
+  - Add smooth CSS transition for bar animation
   - _Requirements: 5.2, 5.3_
 
-- [ ] 12. Build Footer component
-  - Create footer with navigation links (Dashboard, Documentation, Contact)
-  - Add social media links section
-  - Style with consistent spacing and Supporting color text
-  - _Requirements: 1.6_
+- [ ] 24. Create WalletConnect component
+  - Create "Connect Wallet" button with Accent color
+  - Display connected wallet address in truncated format
+  - Show connection status indicator (green dot)
+  - Mock wallet connection - update WalletContext
+  - Add disconnect functionality
+  - Add loading state during connection
+  - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6_
 
-## Landing Page
+## Phase 10: Internationalization (Optional)
 
-- [ ] 13. Build Landing page with all sections
-  - [ ] 13.1 Create LandingHero component
-    - Display headline "Secure Voting Powered by Blockchain"
-    - Add subheading "Transparent, tamper-proof elections with real-time results"
-    - Create "Start Voting" button (Accent color) and "Create a Campaign" button (Secondary color)
-    - Add simple blockchain chain SVG illustration (3-4 connected blocks)
-    - _Requirements: 1.1, 1.2_
-  
-  - [ ] 13.2 Create About section
-    - Display description of core features (multi-campaign voting, real-time analytics, wallet-based identity, CNIC authentication, duplicate vote prevention)
-    - Style with centered content and max-width container
-    - _Requirements: 1.3_
-  
-  - [ ] 13.3 Create How It Works section
-    - Display three-step visual guide with icons
-    - Step 1: "Connect Wallet" with MetaMask icon
-    - Step 2: "Cast Vote" with ballot icon
-    - Step 3: "View Live Results" with chart icon
-    - _Requirements: 1.4_
-  
-  - [ ] 13.4 Create Features Grid section
-    - Display four feature cards in 2x2 grid (responsive)
-    - Card 1: Secure (blockchain tamper-proof)
-    - Card 2: Transparent (immutable ledger)
-    - Card 3: Fast (instant vote recording)
-    - Card 4: Decentralized (no central control)
-    - _Requirements: 1.5, 10.6_
-  
-  - [ ] 13.5 Assemble Landing page
-    - Integrate Navbar, LandingHero, About, HowItWorks, FeaturesGrid, and Footer
-    - Ensure responsive layout for mobile, tablet, and desktop
-    - _Requirements: 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 10.1_
-
-## Authentication Pages
-
-- [ ] 14. Build Register page
-  - Create registration form with input fields (Wallet Address, Email, Full Name, CNIC)
-  - Implement inline validation with error messages below fields
-  - Display wallet connection status indicator
-  - Add "Register & Verify Wallet" button
-  - Show validation feedback (red error text or green checkmark)
-  - Handle form submission and redirect to OTP verification
-  - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
-
-- [ ] 15. Build OTPVerify page
-  - Create 6-digit OTP input field
-  - Display countdown timer for OTP expiration (5 minutes)
-  - Add "Resend OTP" button (enabled after timer expires)
-  - Implement "Verify" button with loading state
-  - Show success message and redirect to dashboard on valid OTP
-  - Display error message "Invalid OTP code. Please try again" on failure
-  - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6_
-
-## Voting Interface
-
-- [ ] 16. Build Voting page
-  - Fetch and display list of active campaigns using CampaignCard components
-  - Display wallet address verification status at top
-  - Show "One vote per wallet" indicator
-  - Implement "Vote Now" button navigation to campaign details
-  - Handle empty state when no active campaigns exist
-  - _Requirements: 4.1, 4.2, 4.3, 10.6_
-
-- [ ] 17. Build CampaignDetails page
-  - Display campaign name, description, and rules
-  - Show candidate/option profiles with names, descriptions, and optional images
-  - Display start date, end date, and time remaining
-  - Show eligibility status for current voter
-  - Create voting interface with VoteOption components
-  - Implement "Cast Your Vote" button with transaction processing
-  - Show "Already Voted" status if user has voted
-  - Display "Voting Closed" status for closed campaigns
-  - Handle blockchain transaction with loading, success, and error states
-  - _Requirements: 4.4, 4.5, 4.6, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 13.1, 13.2, 13.3, 13.4, 13.5, 13.6_
-
-## Results Dashboard
-
-- [ ] 18. Build Results page
-  - Display campaign selector dropdown or list
-  - Show campaign name, status badge (Active/Closed), and total votes
-  - Integrate ResultsChart component for vote distribution
-  - Display "Results updating live" indicator with live icon
-  - Implement auto-refresh every 5 seconds for active campaigns
-  - Show last updated timestamp
-  - Display clickable transaction hashes linking to blockchain explorer
-  - _Requirements: 5.1, 5.2, 5.3, 5.4, 5.5, 5.6_
-
-## Campaign Management
-
-- [ ] 19. Build CampaignManagement page
-  - Display "Create New Campaign" button at top
-  - Show list of organizer's campaigns with CampaignCard components
-  - Add "Edit" and "Delete" buttons for each campaign
-  - Display campaign statistics (total votes, participation rate, time remaining)
-  - Implement create campaign modal/form with fields (name, description, options, duration)
-  - Implement edit campaign functionality with pre-filled form
-  - Add delete confirmation dialog
-  - Handle form validation and submission
-  - _Requirements: 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7_
-
-- [ ] 20. Build AddMember page
-  - Create form with email and wallet address input fields
-  - Add "Bulk Upload" button for CSV file upload
-  - Implement CSV parsing and validation
-  - Display member list table with email, wallet address, and "Remove" button
-  - Implement single member addition with validation
-  - Implement bulk member addition from CSV
-  - Add remove member functionality with confirmation
-  - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5, 7.6_
-
-## User Profile
-
-- [ ] 21. Build UserProfile page
-  - Display user information (full name, email, wallet address, CNIC)
-  - Add "Edit Profile" button to enable editing
-  - Implement editable fields for full name and email
-  - Show wallet connection status and "Change Wallet" button
-  - Implement wallet change functionality
-  - Add language preference toggle (English/Urdu)
-  - Handle profile update submission with validation
-  - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6_
-
-## Internationalization
-
-- [ ] 22. Implement multilingual support
+- [ ]* 25. Implement multilingual support
   - Create translations.js utility with English and Urdu text objects
   - Create LanguageContext for global language state
   - Add language toggle button in Navbar
   - Implement language switching functionality
   - Store language preference in localStorage
   - Apply RTL text direction for Urdu
-  - Translate all interface text in key pages (Landing, Register, Voting, Results)
+  - Translate interface text in key pages
   - _Requirements: 15.1, 15.2, 15.3, 15.4, 15.5, 15.6_
 
-## Responsive Design and Polish
+## Phase 11: Polish and Refinement
 
-- [ ] 23. Implement responsive layouts across all pages
-  - Test all pages at 320px (mobile), 768px (tablet), and 1024px (desktop) breakpoints
+- [ ] 26. Implement responsive design verification
+  - Test all pages at 320px (mobile), 768px (tablet), and 1024px (desktop)
   - Ensure hamburger menu works on mobile
   - Verify form fields stack vertically on mobile
   - Check minimum text size of 14px on mobile
   - Verify touch targets are at least 44px height
-  - Test campaign card grid responsiveness (1 column mobile, 2 tablet, 3 desktop)
+  - Test campaign card grid responsiveness
   - _Requirements: 10.1, 10.2, 10.3, 10.4, 10.5, 10.6_
 
-- [ ] 24. Apply consistent design system
-  - Verify all colors match specification (Primary, Secondary, Accent, Supporting)
+- [ ] 27. Apply consistent design system
+  - Verify all colors match specification
   - Check consistent spacing using 8px base unit
-  - Ensure all icons are simple line-style
-  - Verify hover effects on all buttons
-  - Test text contrast ratios (4.5:1 for normal, 3:1 for large)
+  - Ensure all Material Symbols icons are consistent
+  - Verify hover effects on all interactive elements
+  - Test text contrast ratios for accessibility
   - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8_
 
-## Error Handling and User Feedback
-
-- [ ] 25. Implement comprehensive error handling
-  - Create ErrorToast component for displaying errors
-  - Add error handling for wallet connection failures
-  - Implement error handling for API request failures
-  - Add error handling for blockchain transaction failures
-  - Display user-friendly error messages for all error scenarios
-  - Add retry functionality for failed operations
-  - _Requirements: 2.5, 3.6, 13.4, 14.3_
-
-- [ ] 26. Add loading states and success feedback
+- [ ] 28. Add loading states and user feedback
   - Implement loading spinners for async operations
-  - Add skeleton loaders for data fetching
-  - Display success messages for completed actions
-  - Show transaction processing indicators
-  - Add success confirmation modals for critical actions
+  - Add success messages for completed actions
+  - Create toast/notification component for feedback
+  - Add form validation feedback (error messages)
+  - Show processing indicators for mock operations
   - _Requirements: 12.7, 13.1, 13.2, 13.3_
 
-## Final Integration and Testing
+- [ ]* 29. Create mock data utilities
+  - Create mockData.js with sample campaigns
+  - Add sample users and voting records
+  - Create helper functions to generate mock data
+  - Populate contexts with realistic mock data
+  - _Requirements: All requirements_
 
-- [ ] 27. Connect frontend to backend API
-  - Configure API base URL in environment variables
-  - Test all API endpoints with real backend
-  - Verify JWT authentication flow
-  - Test error responses and handling
+## Phase 12: Future Backend Integration (Not Implemented Now)
+
+- [ ]* 30. Backend API integration preparation
+  - Document API endpoints needed
+  - Create API utility structure (axios instance)
+  - Add environment variable placeholders
+  - Document authentication flow
   - _Requirements: 2.4, 3.4, 4.4, 6.2, 7.3_
 
-- [ ] 28. Deploy smart contract and integrate
-  - Deploy VotingContract to Sepolia testnet
-  - Update contract address in frontend configuration
-  - Test all smart contract functions (createCampaign, castVote, getResults, hasUserVoted)
-  - Verify blockchain transaction confirmations
-  - _Requirements: 4.4, 4.5, 13.2, 13.3_
-
-- [ ]* 29. Manual testing and bug fixes
-  - Test complete user flows (registration → voting → results)
-  - Test campaign creation and management flow
-  - Test member addition and removal
-  - Verify responsive design on actual devices
-  - Test wallet connection on different browsers
-  - Fix any discovered bugs or UI issues
-  - _Requirements: All requirements_
+- [ ]* 31. Blockchain integration preparation
+  - Document smart contract functions needed
+  - Create blockchain utility structure
+  - Add contract address placeholder
+  - Document wallet connection flow
+  - _Requirements: 4.4, 4.5, 13.2, 13.3, 14.1, 14.2_
 

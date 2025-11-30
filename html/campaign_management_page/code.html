@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UniVote - Campaign Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4c719a",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#16191c",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#131416] dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#dee0e3] dark:border-gray-700 px-6 py-3 bg-white dark:bg-background-dark sticky top-0 z-10">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-6">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-primary text-lg font-bold leading-tight tracking-[-0.015em]">UniVote</h2>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg size-10 bg-gray-100 dark:bg-gray-800 text-[#131416] dark:text-gray-300">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture, abstract purple gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCupDVA-LBOvxETkzrElS_OtDK2PD4n6mJdAJuTY5TrmIw-c6cGY120cLznu-ct83Wy1_np-MJSL7ISLu_1iGGDbuefTfnhRlySmk4Yht6VA_RzLRt6GhxA8bSEBuzshF4oa5ER2_-8dnYCaCDIXrYBSbh85q_StaN1qDhDNPyNBrs0QRhHLIhRbjGGmKa6ZQDREnGNPgQ1fMMXYPeQWDxjW3FUJXV4KU5a9_sdZXxvSOmXyBLtWUvOc2-W16DhA31XvqqbQSoYRf0");'></div>
+</div>
+</header>
+<div class="flex flex-1">
+<aside class="w-72 flex-shrink-0 border-r border-[#dee0e3] dark:border-gray-700 bg-white dark:bg-background-dark p-4">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-6">
+<div class="flex flex-col gap-1 px-2">
+<h1 class="text-[#131416] dark:text-gray-200 text-base font-medium leading-normal">UniVote Admin</h1>
+<p class="text-[#6d757e] dark:text-gray-400 text-sm font-normal leading-normal">FYP Edition</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary dark:bg-primary/20" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">campaign</span>
+<p class="text-sm font-medium leading-normal">Campaigns</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90">
+<span class="truncate">Create New Campaign</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-8">
+<div class="mx-auto max-w-5xl">
+<div class="flex flex-wrap justify-between gap-3 mb-6">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-[#131416] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Campaign Management</p>
+<p class="text-[#6d757e] dark:text-gray-400 text-base font-normal leading-normal">Oversee, create, and manage all voting campaigns from here.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dee0e3] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#131416] dark:text-gray-300 text-base font-medium leading-normal">Total Campaigns</p>
+<p class="text-[#131416] dark:text-white tracking-light text-2xl font-bold leading-tight">12</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">arrow_upward</span>
+<span>2 this month</span>
+</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dee0e3] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#131416] dark:text-gray-300 text-base font-medium leading-normal">Active Campaigns</p>
+<p class="text-[#131416] dark:text-white tracking-light text-2xl font-bold leading-tight">3</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">arrow_upward</span>
+<span>1 new</span>
+</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 border border-[#dee0e3] dark:border-gray-700 bg-white dark:bg-gray-800">
+<p class="text-[#131416] dark:text-gray-300 text-base font-medium leading-normal">Total Votes Cast</p>
+<p class="text-[#131416] dark:text-white tracking-light text-2xl font-bold leading-tight">8,452</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 16px;">arrow_upward</span>
+<span>5.2% vs last week</span>
+</p>
+</div>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-[#dee0e3] dark:border-gray-700 overflow-hidden">
+<h2 class="text-[#131416] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] px-6 py-4 border-b border-[#dee0e3] dark:border-gray-700">Campaigns Overview</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+<tr>
+<th class="px-6 py-3" scope="col">Campaign Name</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Start Date</th>
+<th class="px-6 py-3" scope="col">End Date</th>
+<th class="px-6 py-3" scope="col">Total Votes</th>
+<th class="px-6 py-3" scope="col"><span class="sr-only">Actions</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Student Council President 2024</th>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+<span class="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+                                                Active
+                                            </span>
+</td>
+<td class="px-6 py-4">Oct 1, 2024</td>
+<td class="px-6 py-4">Oct 10, 2024</td>
+<td class="px-6 py-4">1,204</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary dark:text-primary/80 hover:underline">Edit</button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Campus Mascot Referendum</th>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+<span class="w-2 h-2 me-1 bg-gray-500 rounded-full"></span>
+                                                Closed
+                                            </span>
+</td>
+<td class="px-6 py-4">Sep 15, 2024</td>
+<td class="px-6 py-4">Sep 20, 2024</td>
+<td class="px-6 py-4">3,510</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary dark:text-primary/80 hover:underline">View Results</button>
+</td>
+</tr>
+<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Engineering Faculty Representative</th>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">
+<span class="w-2 h-2 me-1 bg-blue-500 rounded-full"></span>
+                                                Upcoming
+                                            </span>
+</td>
+<td class="px-6 py-4">Oct 20, 2024</td>
+<td class="px-6 py-4">Oct 25, 2024</td>
+<td class="px-6 py-4">0</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary dark:text-primary/80 hover:underline">Edit</button>
+</td>
+</tr>
+<tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+<th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white" scope="row">Library Renovation Funding</th>
+<td class="px-6 py-4">
+<span class="inline-flex items-center bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-gray-700 dark:text-gray-300">
+<span class="w-2 h-2 me-1 bg-gray-500 rounded-full"></span>
+                                                Closed
+                                            </span>
+</td>
+<td class="px-6 py-4">Aug 5, 2024</td>
+<td class="px-6 py-4">Aug 12, 2024</td>
+<td class="px-6 py-4">2,988</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary dark:text-primary/80 hover:underline">View Results</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

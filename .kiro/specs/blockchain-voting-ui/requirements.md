@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document specifies the requirements for a blockchain-based decentralized voting application designed as a Final Year Project (FYP). The system provides a secure, transparent, and tamper-proof voting platform that addresses real-world voting challenges including fraud prevention, duplicate vote detection, and transparent result tracking. The application features a React JS frontend with TailwindCSS and shadcn/ui components, designed with simplicity in mind for educational purposes while maintaining professional standards.
+This document specifies the requirements for a blockchain-based decentralized voting application designed as a Final Year Project (FYP). The system provides a secure, transparent, and tamper-proof voting platform that addresses real-world voting challenges including fraud prevention, duplicate vote detection, and transparent result tracking. The application features a React JS frontend with TailwindCSS, designed with simplicity in mind for educational purposes while maintaining professional standards.
 
 ## Glossary
 

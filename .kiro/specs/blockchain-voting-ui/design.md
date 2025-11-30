@@ -2,7 +2,7 @@
 
 ## Overview
 
-This design document outlines the architecture and implementation approach for a blockchain-based decentralized voting application. The system is designed as a Final Year Project (FYP) with simplicity and educational value in mind, using React JS, Tailwind CSS, shadcn/ui components, Node.js backend, Ethereum smart contracts, and MongoDB database. The design prioritizes clean, minimal aesthetics with a light theme and straightforward component structure suitable for developers with 1 year of experience.
+This design document outlines the architecture and implementation approach for a blockchain-based decentralized voting application. The system is designed as a Final Year Project (FYP) with simplicity and educational value in mind, using React JS, Tailwind CSS, Node.js backend, Ethereum smart contracts, and MongoDB database. The design prioritizes clean, minimal aesthetics with a light theme and straightforward component structure suitable for developers with 1 year of experience.
 
 ## Architecture
 
@@ -12,7 +12,7 @@ This design document outlines the architecture and implementation approach for a
 ┌─────────────────┐         ┌─────────────────┐         ┌─────────────────┐
 │   React Frontend│◄───────►│  Node.js Backend│◄───────►│    MongoDB      │
 │   (Tailwind +   │         │   (REST API)    │         │   (User Data)   │
-│    shadcn/ui)   │         └─────────────────┘         └─────────────────┘
+│    )   │         └─────────────────┘         └─────────────────┘
 └────────┬────────┘                  │
          │                           │
          │                           ▼
@@ -25,7 +25,7 @@ This design document outlines the architecture and implementation approach for a
 
 ### Technology Stack
 
-- **Frontend**: React JS 18+, React Router v6, Tailwind CSS, shadcn/ui components
+- **Frontend**: React JS 18+, React Router v6, Tailwind CSS,
 - **State Management**: React Context API (simple, no Redux)
 - **Backend**: Node.js with Express.js
 - **Database**: MongoDB with Mongoose ODM

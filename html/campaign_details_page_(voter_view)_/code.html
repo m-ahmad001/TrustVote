@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>University Voting Portal - Campaign Details</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#123962", // Dark Blue
+              "secondary": "#2754ba", // Bright Blue
+              "accent": "#00aee6", // Cyan
+              "supporting-1": "#799eb2", // Muted Blue 1
+              "supporting-2": "#b1d4e5", // Muted Blue 2
+              "background-light": "#f6f7f7",
+              "background-dark": "#16191c",
+              "text-light": "#131416",
+              "text-dark": "#f1f2f3",
+              "text-muted-light": "#6d757e",
+              "text-muted-dark": "#9ca3af",
+              "card-light": "#ffffff",
+              "card-dark": "#252a30",
+              "border-light": "#e5e7eb",
+              "border-dark": "#374151"
+            },
+            fontFamily: {
+              "display": ["Public Sans", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-10 lg:px-20 py-3 bg-card-light dark:bg-card-dark sticky top-0 z-50">
+<div class="flex items-center gap-4 text-text-light dark:text-text-dark">
+<div class="size-6 text-primary dark:text-accent">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">University Voting Portal</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-4 sm:gap-6">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">Connect Wallet</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtqKmYmWRAXamhCkaStighduBvxuuzrH0W79nv2vqivPrW-QDchCJwc3L0PTbCDki15wX8uPp3Znl9wdfebxC_V4xwR-l_HRCDU9qgRjXiQL7HKnRbpUjpyWQOKP7Z4u6jrGPb0v_FmoIhwCyMEk1V1M2nVG5rqFHDDixqBXbSFc6sTjxzaMBwfpq3z9a7CkMZaPvnJ3jiGAA84PYRV5UBU_wMSoVmlBMcfbp68hRXnmROnBrJINwRkLQqHbMXrcv-sxWgXG10iWI");'></div>
+</div>
+</header>
+<main class="px-4 sm:px-10 lg:px-20 flex flex-1 justify-center py-5 sm:py-10">
+<div class="layout-content-container flex flex-col max-w-5xl flex-1 gap-8">
+<!-- Main Hero Section -->
+<section class="flex flex-col gap-4 p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex flex-wrap justify-between items-start gap-3">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Student Union President Election 2024</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">An election to determine the next president of the student union for the upcoming academic year. Your vote matters in shaping our university's future.</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent/20 px-4">
+<p class="text-accent text-sm font-bold leading-normal">Active</p>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Details & CTA -->
+<div class="lg:col-span-1 flex flex-col gap-8">
+<!-- Information Card -->
+<div class="flex flex-col p-6 rounded-xl bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<h3 class="text-xl font-bold mb-4 text-text-light dark:text-text-dark">Campaign Details</h3>
+<div class="flex flex-col divide-y divide-border-light dark:divide-border-dark">
+<div class="flex justify-between gap-x-6 py-3">
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">Start Date</p>
+<p class="text-text-light dark:text-text-dark text-sm font-semibold leading-normal text-right">August 5, 2024, 09:00 AM</p>
+</div>
+<div class="flex justify-between gap-x-6 py-3">
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal">End Date</p>
+<p class="text-text-light dark:text-text-dark text-sm font-semibold leading-normal text-right">August 12, 2024, 05:00 PM</p>
+</div>
+</div>
+<div class="mt-4 border-t border-border-light dark:border-border-dark">
+<div class="flex gap-2 sm:gap-4 py-6">
+<div class="flex grow basis-0 flex-col items-stretch gap-2">
+<div class="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background-light dark:bg-background-dark">
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em]">6</p>
+</div>
+<div class="flex items-center justify-center"><p class="text-text-muted-light dark:text-text-muted-dark text-xs sm:text-sm font-normal leading-normal">Days</p></div>
+</div>
+<div class="flex grow basis-0 flex-col items-stretch gap-2">
+<div class="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background-light dark:bg-background-dark">
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em]">22</p>
+</div>
+<div class="flex items-center justify-center"><p class="text-text-muted-light dark:text-text-muted-dark text-xs sm:text-sm font-normal leading-normal">Hours</p></div>
+</div>
+<div class="flex grow basis-0 flex-col items-stretch gap-2">
+<div class="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background-light dark:bg-background-dark">
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight tracking-[-0.015em]">14</p>
+</div>
+<div class="flex items-center justify-center"><p class="text-text-muted-light dark:text-text-muted-dark text-xs sm:text-sm font-normal leading-normal">Minutes</p></div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">Cast Your Vote</span>
+</button>
+<!-- Disabled CTA Example -->
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-not-allowed items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-supporting-1/50 text-white/70 text-lg font-bold leading-normal tracking-[0.015em]" disabled="">
+<span class="truncate">You have already voted</span>
+</button>
+<!-- Closed Campaign Example -->
+<button class="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-secondary text-white text-lg font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-colors">
+<span class="truncate">View Results</span>
+</button>
+</div>
+<!-- Right Column: Tabbed Content -->
+<div class="lg:col-span-2 flex flex-col">
+<div class="bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark rounded-xl p-6">
+<div class="border-b border-border-light dark:border-border-dark">
+<nav aria-label="Tabs" class="flex space-x-6 -mb-px">
+<a aria-current="page" class="whitespace-nowrap py-4 px-1 border-b-2 font-bold text-base border-primary text-primary" href="#">Candidates</a>
+<a class="whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base border-transparent text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark hover:border-supporting-2 dark:hover:border-supporting-1" href="#">Campaign Rules</a>
+</nav>
+</div>
+<div class="py-6">
+<!-- Candidates Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Candidate Card 1 -->
+<div class="flex flex-col items-center p-6 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 mb-4" data-alt="Photo of Jane Doe" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAujJ4oyJNatP532wjFxTvdFc9zuA4jTED4pGwNwUTWCUbBEPLuPmdZNOLmqVf18EM05mxRyuVV7jrceWrD09iKYqXJuCpA-n5yDJyqTXCc6UB1xM881xwIv7ep1XSL7DBSM4wa1MKgZesl3wFeENgQyRoSmYkZeurgBtc-uz61ZPItNWHx-ZBQvaaaTYbcZMuVUyOd1XApT4v6jILCafM-EtTvzQWZJc3b6FDLdEwRa_rbECKGt6vjp_PlyKe7ac0gG_YRg1_wysE");'></div>
+<h4 class="text-lg font-bold text-text-light dark:text-text-dark">Jane Doe</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1 mb-4">"A vote for me is a vote for progress and inclusivity. Let's build a better campus together."</p>
+<button class="flex w-full justify-center items-center rounded-md h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">
+<span class="truncate">View Manifesto</span>
+</button>
+</div>
+<!-- Candidate Card 2 -->
+<div class="flex flex-col items-center p-6 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 mb-4" data-alt="Photo of John Smith" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhM6r-9w_ODzjIXV465yEw0CqDsQvBC49B0kyvAdxnhH6oruXAHxDbT0093nf7gnA7tkGegm6p5lMYIPd--X44_kXgb-9sqIDzNYgkOWViUa7oq4dELqDSiR9LhsQT7QdaoGmK-XlwbEIJMgKOedPygozDibrpU1gW7ODQmWDQdUf9nEeHseM3cP3KX3FYoKZTqrpRsb6IhmkFAbs_s1RR76rdVtsQdgAGWCUvaOQMkKdlhKStvapO5JEJw4tlCh8gOG7hdCO7LZ0");'></div>
+<h4 class="text-lg font-bold text-text-light dark:text-text-dark">John Smith</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1 mb-4">"Focused on enhancing student life through practical solutions and transparent leadership."</p>
+<button class="flex w-full justify-center items-center rounded-md h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">
+<span class="truncate">View Manifesto</span>
+</button>
+</div>
+<!-- Candidate Card 3 -->
+<div class="flex flex-col items-center p-6 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 mb-4" data-alt="Photo of Emily White" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAewJbq6_5jtNOXG6XXxhVdARxO9UeSynBgbYazPuAS_t2NuJDl0jUJXgLhb5F9t2q24USoxyXVEjIUPWQKwsbv84sPC7c5plQdrzroyb8_xSeqlDBfAqlkevCz9Ah7fhrongTglSr3GtQ6wB8OxJYHxIOsDN9kA6US0dUxtq7OBf1_NbVIvT8pI3uACqiSCox_evpiWtnoUMo_A6iNdboT9DT0SEu-ldPvZrFUMZtPo6ecl2sFJpgjgti1wvgBJIrw8c-NhKrONLk");'></div>
+<h4 class="text-lg font-bold text-text-light dark:text-text-dark">Emily White</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1 mb-4">"Championing innovation in academics and sustainability across all campus activities."</p>
+<button class="flex w-full justify-center items-center rounded-md h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">
+<span class="truncate">View Manifesto</span>
+</button>
+</div>
+<!-- Candidate Card 4 -->
+<div class="flex flex-col items-center p-6 rounded-lg border border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark text-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-24 mb-4" data-alt="Photo of Michael Brown" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDLRky72uZib3VrQKSzSFINdATrnuv5umVoNE7Qnv8UJKlPZ33iimqiQome9dg0B8VPCsHd9dDho8yoCujjMTM5DzKnjS3Cx_cEbhOvxx7qTEOaCiV8KWgmOoEkUvxxhr8s8vzDkvWH608OkOFvfvC6Bo8nZ30ouZ7LKq8lxjyjHZNjUpjn9BJfoiJ5gxAxTBWQkvfRDX969OM0ZEQN6PjMVgQiOa-8agu_Y_XYH9Q_PCcYl3RjB214Fa6wJ5SRla0L1TDFeXJcyFg");'></div>
+<h4 class="text-lg font-bold text-text-light dark:text-text-dark">Michael Brown</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1 mb-4">"Dedicated to amplifying student voices and ensuring fair representation for all departments."</p>
+<button class="flex w-full justify-center items-center rounded-md h-10 px-4 bg-primary/20 text-primary text-sm font-bold hover:bg-primary/30 transition-colors">
+<span class="truncate">View Manifesto</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 mt-10 border-t border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark">
+<div class="max-w-7xl mx-auto px-4 sm:px-10 lg:px-20 text-center text-text-muted-light dark:text-text-muted-dark text-sm">
+<p>© 2024 University Voting Portal - Final Year Project</p>
+<p class="mt-1">A demonstration of a decentralized application using Ethereum and modern web technologies.</p>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
