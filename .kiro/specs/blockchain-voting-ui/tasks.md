@@ -175,7 +175,9 @@ This implementation plan focuses on building the UI first without backend or blo
   - Navigate to OTP page on submit
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
 
-- [-] 13. Convert OTP Verification Page
+- [x] 13. Convert OTP Verification Page
+
+
 
 
   - Convert html/otp_verification_page to React component
