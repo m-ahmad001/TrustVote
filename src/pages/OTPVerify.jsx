@@ -152,7 +152,7 @@ export default function OTPVerify() {
                 </defs>
               </svg>
             </div>
-            <h2 className="text-xl font-bold leading-tight tracking-[-0.015em]">De-Vote</h2>
+            <h2 className="text-xl font-bold leading-tight tracking-[-0.015em]">TrustVote</h2>
           </div>
         </header>
       </div>

@@ -28,7 +28,7 @@ export default function CampaignDetails() {
   // Calculate time remaining
   const getTimeRemaining = () => {
     if (!campaign) return { days: 0, hours: 0, minutes: 0 };
-    
+
     const now = new Date();
     const end = new Date(campaign.endDate);
     const diff = end - now;
@@ -47,9 +47,9 @@ export default function CampaignDetails() {
   // Format date
   const formatDate = (dateString) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
       day: 'numeric',
       hour: '2-digit',
       minute: '2-digit'
@@ -63,8 +63,8 @@ export default function CampaignDetails() {
 
   // Handle vote submission
   const handleCastVote = async () => {
-    if (!selectedOption || !address) return;
-
+    // if (!selectedOption || !address) return;
+    debugger
     setIsVoting(true);
     setVoteError(null);
 
@@ -73,6 +73,7 @@ export default function CampaignDetails() {
       setVoteSuccess(true);
       // Reload campaign data to get updated vote counts
       const updatedCampaign = getCampaignById(id);
+      console.log("updatedCampaign", updatedCampaign)
       setCampaign(updatedCampaign);
     } catch (error) {
       setVoteError(error.message || 'Failed to cast vote. Please try again.');
@@ -216,15 +217,15 @@ export default function CampaignDetails() {
               )}
 
               {/* {isConnected && canVote && !voteSuccess && ( */}
-                <button
-                  onClick={handleCastVote}
-                  disabled={!selectedOption || isVoting}
-                  className="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-primary-foreground text-lg font-bold leading-normal tracking-[0.015em] hover:bg-secondary transition-colors disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed"
-                >
-                  <span className="truncate">
-                    {isVoting ? 'Processing transaction...' : 'Cast Your Vote'}
-                  </span>
-                </button>
+              <button
+                onClick={handleCastVote}
+                disabled={!selectedOption || isVoting}
+                className="flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-primary-foreground text-lg font-bold leading-normal tracking-[0.015em] hover:bg-secondary transition-colors disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed"
+              >
+                <span className="truncate">
+                  {isVoting ? 'Processing transaction...' : 'Cast Your Vote'}
+                </span>
+              </button>
               {/* )} */}
 
               {isConnected && userHasVoted && !voteSuccess && (
@@ -254,21 +255,19 @@ export default function CampaignDetails() {
                   <nav aria-label="Tabs" className="flex space-x-6 -mb-px">
                     <button
                       onClick={() => setActiveTab('candidates')}
-                      className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-base ${
-                        activeTab === 'candidates'
+                      className={`whitespace-nowrap py-4 px-1 border-b-2 font-bold text-base ${activeTab === 'candidates'
                           ? 'border-primary text-primary'
                           : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted'
-                      }`}
+                        }`}
                     >
                       Candidates
                     </button>
                     <button
                       onClick={() => setActiveTab('rules')}
-                      className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base ${
-                        activeTab === 'rules'
+                      className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-base ${activeTab === 'rules'
                           ? 'border-primary text-primary'
                           : 'border-transparent text-muted-foreground hover:text-foreground hover:border-muted'
-                      }`}
+                        }`}
                     >
                       Campaign Rules
                     </button>
@@ -285,7 +284,7 @@ export default function CampaignDetails() {
                           option={option}
                           selected={selectedOption === option.id}
                           onSelect={setSelectedOption}
-                          // disabled={!canVote || isVoting}
+                        // disabled={!canVote || isVoting}
                         />
                       ))}
                     </div>
@@ -302,11 +301,11 @@ export default function CampaignDetails() {
                         <li>All votes are anonymous and secure</li>
                         <li>Results are updated in real-time as votes are cast</li>
                       </ul>
-                      
+
                       <h3 className="text-lg font-bold text-foreground mt-6 mb-4">Eligibility</h3>
                       <p className="text-muted-foreground">
-                        This campaign is open to all registered users with verified wallet addresses. 
-                        Ensure your wallet is connected and you have completed the registration process 
+                        This campaign is open to all registered users with verified wallet addresses.
+                        Ensure your wallet is connected and you have completed the registration process
                         before attempting to vote.
                       </p>
                     </div>

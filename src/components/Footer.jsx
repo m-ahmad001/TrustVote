@@ -19,7 +19,7 @@ export default function Footer() {
                   </defs>
                 </svg>
               </div>
-              <h2 className="text-white text-xl font-bold">De-Vote</h2>
+              <h2 className="text-white text-xl font-bold">TrustVote</h2>
             </div>
             <p className="text-sm text-slate-300">A Final Year Project for decentralized university elections.</p>
           </div>
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-8 border-t border-slate-200/20 pt-8 text-center">
-          <p className="text-sm text-slate-400">© 2024 De-Vote. A University Final Year Project. All rights reserved.</p>
+          <p className="text-sm text-slate-400">© 2025 TrustVote. A University Final Year Project. All rights reserved.</p>
         </div>
       </div>
     </footer>

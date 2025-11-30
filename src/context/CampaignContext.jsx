@@ -186,7 +186,7 @@ export const CampaignProvider = ({ children }) => {
     setIsLoading(true);
     try {
       // Simulate blockchain transaction delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // await new Promise(resolve => setTimeout(resolve, 1500));
 
       // Check if already voted
       const voteKey = `${campaignId}-${voterAddress}`;

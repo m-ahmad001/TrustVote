@@ -80,7 +80,7 @@ export default function CampaignCard({ campaign }) {
       <div className="flex justify-end">
         <button
           onClick={handleVoteClick}
-          disabled={!isActive || userHasVoted}
+          // disabled={!isActive || userHasVoted}
           className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-primary-foreground text-base font-bold leading-normal tracking-[0.015em] hover:bg-secondary transition-colors disabled:bg-muted disabled:text-muted-foreground disabled:cursor-not-allowed"
         >
           <span className="truncate">
