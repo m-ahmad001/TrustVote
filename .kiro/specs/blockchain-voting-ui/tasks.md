@@ -164,7 +164,9 @@ This implementation plan focuses on building the UI first without backend or blo
 
 ## Phase 4: Authentication Pages (Convert from HTML)
 
-- [ ] 12. Convert User Registration Page
+- [x] 12. Convert User Registration Page
+
+
   - Convert html/user_registration_page to React component
   - Create form with controlled inputs (Wallet Address, Email, Full Name, CNIC)
   - Add inline validation using utility functions
@@ -173,7 +175,9 @@ This implementation plan focuses on building the UI first without backend or blo
   - Navigate to OTP page on submit
   - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6_
 
-- [ ] 13. Convert OTP Verification Page
+- [-] 13. Convert OTP Verification Page
+
+
   - Convert html/otp_verification_page to React component
   - Create 6-digit OTP input field
   - Add countdown timer (5 minutes) with useState
