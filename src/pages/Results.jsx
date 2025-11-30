@@ -1,8 +1,19 @@
+import { Navbar } from '../components';
+
 export default function Results() {
   return (
-    <div>
-      <h1>Real-time Results Dashboard</h1>
-      <p>View live voting results</p>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <h1 className="text-4xl font-bold text-primary">
+            Real-time Results Dashboard
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            View live voting results
+          </p>
+        </div>
+      </main>
     </div>
   );
 }

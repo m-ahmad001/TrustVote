@@ -69,7 +69,11 @@ This implementation plan focuses on building the UI first without backend or blo
 
 ## Phase 2: Shared Components (Convert from HTML)
 
-- [ ] 4. Create Navbar component from HTML
+- [x] 4. Create Navbar component from HTML
+
+
+
+
   - Convert html/decentralized_voting_landing_page navbar section to React
   - Use Material Symbols icons instead of SVG
   - Add responsive hamburger menu for mobile
@@ -78,7 +82,11 @@ This implementation plan focuses on building the UI first without backend or blo
   - No backend calls - pure UI component
   - _Requirements: 1.6, 10.2, 11.1_
 
-- [ ] 5. Create Footer component from HTML
+- [x] 5. Create Footer component from HTML
+
+
+
+
   - Convert html/decentralized_voting_landing_page footer section to React
   - Keep all styling from original HTML
   - Make links functional with React Router

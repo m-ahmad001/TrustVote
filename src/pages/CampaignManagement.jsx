@@ -1,8 +1,19 @@
+import { Navbar } from '../components';
+
 export default function CampaignManagement() {
   return (
-    <div>
-      <h1>Campaign Management</h1>
-      <p>Create and manage your campaigns</p>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <h1 className="text-4xl font-bold text-primary">
+            Campaign Management
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Create and manage your campaigns
+          </p>
+        </div>
+      </main>
     </div>
   );
 }
