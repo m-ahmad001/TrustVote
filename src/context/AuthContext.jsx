@@ -13,6 +13,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  console.log("isAuthenticated",isAuthenticated)
   const [isLoading, setIsLoading] = useState(true);
 
   // Mock user data for development
@@ -30,10 +31,10 @@ export const AuthProvider = ({ children }) => {
   // Initialize auth state from localStorage
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
-    const storedAuth = localStorage.getItem('isAuthenticated');
+    const storedAuth = localStorage.getItem('walletConnected');
     
-    if (storedUser && storedAuth === 'true') {
-      setUser(JSON.parse(storedUser));
+    if (storedAuth ) {
+      // setUser(JSON.parse(storedUser));
       setIsAuthenticated(true);
     }
     setIsLoading(false);

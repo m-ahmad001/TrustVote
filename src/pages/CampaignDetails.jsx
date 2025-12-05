@@ -144,43 +144,7 @@ export default function CampaignDetails() {
                   </div>
                 </div>
 
-                {/* Time Remaining Countdown */}
-                {!isCampaignClosed && (
-                  <div className="mt-4 border-t border-border">
-                    <div className="flex gap-2 sm:gap-4 py-6">
-                      <div className="flex grow basis-0 flex-col items-stretch gap-2">
-                        <div className="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background">
-                          <p className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em]">
-                            {timeRemaining.days}
-                          </p>
-                        </div>
-                        <div className="flex items-center justify-center">
-                          <p className="text-muted-foreground text-xs sm:text-sm font-normal leading-normal">Days</p>
-                        </div>
-                      </div>
-                      <div className="flex grow basis-0 flex-col items-stretch gap-2">
-                        <div className="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background">
-                          <p className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em]">
-                            {timeRemaining.hours}
-                          </p>
-                        </div>
-                        <div className="flex items-center justify-center">
-                          <p className="text-muted-foreground text-xs sm:text-sm font-normal leading-normal">Hours</p>
-                        </div>
-                      </div>
-                      <div className="flex grow basis-0 flex-col items-stretch gap-2">
-                        <div className="flex h-14 grow items-center justify-center rounded-lg px-2 bg-background">
-                          <p className="text-foreground text-2xl font-bold leading-tight tracking-[-0.015em]">
-                            {timeRemaining.minutes}
-                          </p>
-                        </div>
-                        <div className="flex items-center justify-center">
-                          <p className="text-muted-foreground text-xs sm:text-sm font-normal leading-normal">Minutes</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+               
               </div>
 
               {/* Success Message */}
