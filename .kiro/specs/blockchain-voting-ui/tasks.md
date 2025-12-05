@@ -282,6 +282,7 @@ This implementation plan focuses on building the UI first without backend or blo
 
 
 
+
   - Convert html/user_profile_page_2 to React component
   - Display user information from AuthContext
   - Add "Edit Profile" button to toggle edit mode
